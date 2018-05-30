@@ -1,0 +1,5 @@
+# Core configuration #
+help:
+- '&3&LConfig file (HELP)'
+usage: '&4/{USAGE}'
+gamemodeMSG: '&3Twoj tryb gry to teraz {GAMEMODE}'
