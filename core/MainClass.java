@@ -13,9 +13,10 @@ public class MainClass extends JavaPlugin{
 	List<String> help = this.getConfig().getStringList("help");
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
+		
 		Player p = (Player) sender;
     if(cmd.getName().equalsIgnoreCase("help")){
-			sender.sendMessage(help);
+			sender.sendMessage(help);					
 		}
     if(cmd.getName().equalsIgnoreCase("gamemode")){
       if(args.length==0){
@@ -25,7 +26,15 @@ public class MainClass extends JavaPlugin{
       if(args.length==1){
         if(args[0].equals(0) | args[0].equalsIgnoreCase("s")){
           p.setGameMode(GameMode.SURVIVAL);
-          p.sendMessage(this.getConfig().getString("gamemodeMsg").replace("{GAMEMODE}", "SURVIVAL").replace("&", "§"));
+          p.sendMessage(this.getConfig().getString("gamemodeMSG").replace("{GAMEMODE}", "SURVIVAL").replace("&", "§"));
+        }
+	if(args[0].equals(1) | args[0].equalsIgnoreCase("c")){
+          p.setGameMode(GameMode.SURVIVAL);
+          p.sendMessage(this.getConfig().getString("gamemodeMSG").replace("{GAMEMODE}", "CREATIVE").replace("&", "§"));
+        }
+	if(args[0].equals(2) | args[0].equalsIgnoreCase("a")){
+          p.setGameMode(GameMode.SURVIVAL);
+          p.sendMessage(this.getConfig().getString("gamemodeMSG").replace("{GAMEMODE}", "ADVENTURE").replace("&", "§"));
         }
       }
     }
