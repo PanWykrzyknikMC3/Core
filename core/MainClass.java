@@ -4,6 +4,7 @@ public class MainClass extends JavaPlugin{
 	public void onEnable()
 	{
 		System.out.println("Ladowanie core...");
+		this.saveDefaultConfig();
 	}
 	public void onDisable()
 	{
